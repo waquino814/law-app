@@ -1,0 +1,39 @@
+<ol class="breadcrumb top-5">
+  <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+  <li class="breadcrumb-item"><a routerLink="/blog">Publications</a></li>
+  <li class="breadcrumb-item active">{{post?.title}}</li>
+</ol>
+<div class="row">
+  <img src={{post?.image}} class="blog-img rounded-top" alt="post image">
+</div>
+<h2>{{post?.title}}</h2>
+<p>
+  {{post?.createdDated}}
+</p>
+<p [innerHTML]="post?.content">
+</p>
+<hr>
+<form #f="ngForm" class="col" (ngSubmit)="onAddComment(f)">
+  <h5>Add Comment</h5>
+  <textarea class="d-block" rows="4" cols="50" ngModel name="comment" required></textarea>
+  <button type="submit" class="btn btn-outline-primary btn-sm">Reply</button>
+</form>
+<div *ngFor="let item of post?.comments" class="post-comment bg-info text-white">
+  <hr>
+  <span class="font-weight-bold">{{item.createdDated}}</span>
+  <br>
+  <p>{{item.content}}</p>
+  <button type="button" class="btn btn-outline-primary btn-sm">Reply</button>
+  <form #innerf="ngForm" class="col" (ngSubmit)="onAddCommentToComment(innerf,item.id)">
+    <h5>Add Comment</h5>
+    <textarea class="d-block" rows="4" cols="50" ngModel name="comment" required></textarea>
+    <button type="submit" class="btn btn-outline-primary btn-sm">Reply</button>
+  </form>
+  <div *ngFor="let comment of item?.comments" class="post-innerComment bg-info text-white">
+    <hr>
+    <span class="font-weight-bold">{{comment.createdDated}}</span>
+    <br>
+    <p>{{comment.content}}</p>
+  </div>
+</div>
+<hr>

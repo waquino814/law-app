@@ -1,0 +1,16 @@
+<h2>Our Legal Practice Areas</h2>
+  <div class="alert alert-info col-10" role="alert">
+  Law Firm offers its clients specialized legal counsel on the more relevant practice areas, and provides, when needed or required, expedite, and integrated solutions, regardless the complexity of our cases.
+  </div>
+ <div class="row">
+  <div class="col-5 section" *ngFor="let item of practiceAreas">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><i class={{item.faIcon}} aria-hidden="true"></i> {{item.name}}</h3>
+        <p> {{item.description}}
+            <a routerLink="/practice/{{item.id}}" class="btn btn-default" click role="button">Read More</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

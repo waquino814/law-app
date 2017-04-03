@@ -1,0 +1,74 @@
+<h2>Contact</h2>
+<div class="row">
+  <form #f="ngForm" class="col" (ngSubmit)="onSubmit(f)">
+    <div class="alert alert-info col-10" role="alert">
+      <span class="col-form-label">We are pleased to serve you.
+We are interested in your comments, questions and suggestions. Your inquiries or comments will be responded to as soon as possible.
+</span>
+    </div>
+    <div class="form-group row">
+      <label class="col-10 col-form-label">Name:</label>
+      <div class="col-10">
+        <input class="form-control" ngModel name="contactName" type="text" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-10 col-form-label">Contact Phone:</label>
+      <div class="col-10">
+        <input class="form-control" type="text" ngModel name="contactPhone" placeholder="(999) 999-9999" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-10 col-form-label">Email:</label>
+      <div class="col-10">
+        <input class="form-control" type="text" ngModel name="contactEmail" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="you@example.com"
+          required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-10 col-form-label">Subjet of Interest: (Optional)</label>
+      <div class="col-10">
+        <select class="custom-select col-10" ngModel name="contactSubjectOfInterest">
+    <option *ngFor="let item of practiceAreas" [value]="item.id">{{item.name}}</option>
+  </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-10">How can we help you?</label>
+      <textarea class="form-control col-10" ngModel name="contactRequestSummary" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn" [class.btn-danger]="f.valid" [class.btn-outline-danger]="!f.valid">Submit</button>
+    <div *ngIf="successMessage" class="alert alert-success top-5" role="alert">
+      <strong>Thanks for Contacting us, we will get back to you as soon as posible!</strong> {{successMessage}}.
+    </div>
+  </form>
+  <div class="col">
+    <div class="icon-logo" routerLink="/home" id="brand-logo"></div>
+    <div class="row">
+      <span class="col">
+      <i class="fa fa-phone"></i> <strong>Phone: </strong> {{company?.phone}}
+    </span>
+      <span class="col">
+      <i class="fa fa-envelope"></i> <strong>Email: </strong> {{company?.email}}
+    </span>
+    </div>
+    <div class="row">
+      <span class="col">
+      <i class="fa fa-print"></i> <strong>Fax: </strong>  {{company?.fax}}
+    </span>
+      <span class="col">
+      <i class="fa fa-globe"></i> <strong>Web: </strong>  {{company?.web}}
+    </span>
+    </div>
+    <div class="row top-5">
+      <span class="col-8">
+      <i class="fa fa-location-arrow"></i> {{company?.loaction}}
+    </span>
+    </div>
+    <figure class="figure">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.674989323888!2d-69.94968508510824!3d18.453060187448305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5621b47f97dbb%3A0x2d321f98744b0604!2sNewtech!5e0!3m2!1sen!2sdo!4v1490976732181"
+        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <figcaption class="figure-caption">Where we are?</figcaption>
+    </figure>
+  </div>
+</div>

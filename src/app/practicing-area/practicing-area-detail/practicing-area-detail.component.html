@@ -1,0 +1,14 @@
+<ol class="breadcrumb top-5">
+  <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+  <li class="breadcrumb-item"><a routerLink="/practice">Practice Areas</a></li>
+  <li class="breadcrumb-item active">{{practiceArea?.name}}</li>
+</ol>
+<h2><i class={{practiceArea?.faIcon}} aria-hidden="true"></i> {{practiceArea?.name}}</h2>
+  <div class="alert alert-info col-10" role="alert">
+  {{practiceArea?.description}}
+  </div>
+
+<hr>
+  <h5>In this location will be a sumarry of each layer in this area after the <strong> Team Summay, Search and Details</strong> are Completed</h5>
+<hr>
+{{practiceArea |json}}

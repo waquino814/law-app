@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-2 top-10">
+    <div class="card card-outline-info" style="top: 17%; left: 22%; position: fixed; width:160px; ">
+      <div class="card-header">
+        <h5> Search</h5>
+      </div>
+      <div class="card-block">
+        <form #f="ngForm">
+          <label>Last Name </label>
+          <div class="row form-group">
+            <button *ngFor="let item of lastNameAlphabet" type="button" style="margin-left: 10px;" class="col-3 btn btn-secondary btn-sm"
+              (click)="searchLastName(item)">{{item}}</button>
+          </div>
+          <hr>
+          <div class="form-group row ">
+            <label class="col-form-label">Name:</label>
+            <input class="form-control" ngModel name="searchName" type="text">
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label">Last Name:</label>
+            <input class="form-control" ngModel name="searchLastName" type="text">
+          </div>
+          <div class="row">
+            <button type="submit" class="btn btn-danger btn-sm" (click)="search(f);">Search</button>
+            <button type="button" style="margin-left: 10px;" class="btn btn-secondary btn-sm" (click)="f.reset();">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!showingSearchResults" class="col-10">
+    <h2>Our Team</h2>
+    <div class="alert alert-info" role="alert">
+      <p>Law Firm, We give priority to the comprehensive development and training of our lawyers, to the selection of the most
+        promising and most talented, which has been our trademark for more than six decades.</p>
+      <p>Supported by the latest technologies for providing legal counsel, Law Firm's attorneys are available at all times and
+        our clients can contact us from anywhere in the world to receive prompt solutions to their needs.</p>
+    </div>
+    <hr>
+    <div class="row">
+      <div *ngFor="let item of lawyers" class="card col-3 top-10 hovereffect" style="margin-left: 10px;" (click)="showLawyerDetails(item.id)">
+        <img class="img-fluid" src={{item.img}} alt="Card image cap">
+        <div class="card-block overlay">
+          <h5>{{item.lastName}}, {{item.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showingSearchResults" class="col-10">
+    <h2>Search Results</h2>
+
+    <!--<div>
+      <ngx-datatable [rows]="searchlawyers" [columns]="columns">
+      </ngx-datatable>
+    </div>-->
+
+    
+    <table class="table table-bordered table-hover" [mfData]="searchlawyers" #mf="mfDataTable" [mfRowsOnPage]="10">
+      <thead>
+        <tr class="table-active">
+          <th style="width: 30%">
+            <mfDefaultSorter by="lastName">Name</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="practiceAreas">Practice Areas</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data;" (click)="showLawyerDetails(item.id)">  
+          <td>{{item.lastName}}, {{item.name}}</td>
+          <td>{{ getPracticeAreasName(item.practiceAreas)}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="height: 30px;">
+          <td colspan="2">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <div *ngIf="searchlawyers.length < 1" class="alert alert-danger" role="alert">
+      <strong>Sorry!</strong> There are no results for this search, please try again.
+    </div>
+  </div>
+</div>

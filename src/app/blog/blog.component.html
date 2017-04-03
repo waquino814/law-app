@@ -1,0 +1,26 @@
+<h2>Publications</h2>
+<div class="alert alert-info col-12" role="alert">
+  <p> We are committed to keeping our clients and the general legal community up-to-date about the changing world of law and
+    the Dominican Republic’s legal system, especially in light of global trends.</p>
+  <p>The firm also participates in renowned publications and surveys such as Getting the Deal Through, Doing Business in and
+    Child & Youth Finance International, where we are listed as representatives for the Dominican Republic. </p>
+</div>
+
+<div class="row">
+  <div *ngFor="let item of posts" class="col-md-4 col-sm-6 col-xs-12">
+    <div class="thumbnail">
+      <img src={{item.image}} class="blog-img rounded-top" alt="post image">
+      <div class="row">
+        <p class="col float-left">
+          <span><i class="fa fa-calendar"></i> {{item.createdDated}}</span>
+          <span><i class="fa fa-comment-o"></i> {{getCommentsCount(item)}} Comments</span>
+        </p>
+      </div>
+      <div class="caption">
+        <h3> {{item.title}}</h3>
+        <p>{{item.content.substring(0,250)}}
+          <a routerLink="/blog/{{item.id}}" class="btn btn-default" click role="button">Read More</a></p>
+      </div>
+    </div>
+  </div>
+</div>

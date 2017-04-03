@@ -1,0 +1,26 @@
+[{
+  "id": "prac_1",
+  "faIcon":"fa fa-university",
+  "name": "Banking Law",
+  "description": "Counsel and representation of banks in their legal and regulatory needs related to their financial operations, products and services offered."
+}, {
+  "id": "prac_2",
+  "faIcon":"fa fa-building-o",
+  "name": "Corporate and Commercial Law",
+  "description": "Preparing commercial agreements, providing advice to both local and foreign clients in all legal matters related to Labor Law, Immigration, and any other Corporate or Commercial Law issues."
+}, {
+  "id": "prac_3",
+  "faIcon":"fa fa-child",
+  "name": "Family Law",
+  "description": "Our private practice area helps clients to achieve the best results feasible when organizing their personal or family patrimony, by delivering worldwide legal service in order to collaborate with the preservation and growth of our client’s patrimony whilst assuring their legacy to serve future generations. Our lawyers are subject to a confidentiality agreement, thus any and all activities are kept in strict secrecy and dealt with the outmost confidentiality."
+}, {
+  "id": "prac_4",
+  "faIcon":"fa fa-gavel",
+  "name": "Litigation, Mediation and Arbitration Law",
+  "description": "We understand and apply ADR (Alternative Dispute Resolution) methods wherever possible to reduce the time and cost of obtaining the best possible result for our client. We also understand that every client is different, and every situation calls for a different approach. While many cases are settled out of court, we are always prepared to go to trial on behalf of our clients whenever necessary."
+}, {
+  "id": "prac_5",
+  "faIcon":"fa fa-calculator",
+  "name": "Tax Law",
+  "description": "We offer assistance in litigation and alternative dispute resolution before government, tax authorities and administrative courts to address examinations, tax assessments, investigations, audits, appeals and diverse tax challenges."
+}]
