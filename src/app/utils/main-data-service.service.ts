@@ -8,6 +8,7 @@ import { Company } from '../data-objects/company';
 import { Http } from '@angular/http';
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/Map';
 
 @Injectable()
 export class MainDataServiceService {
@@ -54,6 +55,13 @@ export class MainDataServiceService {
     return this.http.get(this.lawyersUrl)
     .toPromise()
     .then(response => response.json() as Lawyer[])
+    .catch(this.handleError);
+  }
+    getLawyersByPracticeArea(id: string): Promise<Lawyer[]> {
+    return this.http.get(this.lawyersUrl)
+    .map(response => response.json() as Lawyer[])
+    .map(lawyers => lawyers.filter(item => item.practiceAreas.includes(id)))
+    .toPromise()
     .catch(this.handleError);
   }
    getLawyer(id: string): Promise<Lawyer> {

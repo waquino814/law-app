@@ -5,7 +5,7 @@
 </ol>
 <div *ngIf="lawyer">
   <div class="row">
-    <div class="col-3 section"> <img class="img-fluid" src={{lawyer.img}} alt="Card image cap"> </div>
+    <div class="col-3 section"> <img class="img-fluid rounded-circle" src={{lawyer.img}} alt="Card image cap"> </div>
     <div class="col-9  section">
       <h2> {{lawyer.name}} {{lawyer.lastName}}</h2>
       <i class="fa fa-phone" aria-hidden="true"></i> {{lawyer.phone}}
@@ -15,7 +15,6 @@
           <div *ngFor="let item of $practiceAreas | async">
             <li *ngIf="hasArea(item)"><a routerLink="/practice/{{item.id}}">{{item.name}}</a></li>
           </div>
-
         </ul>
       </div>
     </div>

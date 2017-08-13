@@ -38,9 +38,9 @@
     </div>
     <hr>
     <div class="row">
-      <div *ngFor="let item of lawyers" class="card col-3 top-10 hovereffect" style="margin-left: 10px;" (click)="showLawyerDetails(item.id)">
+      <div *ngFor="let item of lawyers" class="card col-3 top-10 hovereffect" style="margin-left: 10px;">
        <a routerLink="/team/{{item.id}}" class="btn btn-default" click role="button">
-        <img class="img-fluid" src={{item.img}} alt="Card image cap">
+        <img class="img-fluid rounded-circle" src={{item.img}} alt="{{item.name}} {{item.lastName}}" >
         <div class="card-block overlay">
           <h5>{{item.lastName}}, {{item.name}}</h5>
         </div>

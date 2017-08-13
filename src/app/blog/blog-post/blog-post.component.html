@@ -10,7 +10,7 @@
 <p>
   {{post?.createdDated}}
 </p>
-<p [innerHTML]="post?.content">
+<p align=justify [innerHTML]="post?.content">
 </p>
 <hr>
 <form #f="ngForm" class="col" (ngSubmit)="onAddComment(f)">

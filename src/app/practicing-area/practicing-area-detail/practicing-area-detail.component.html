@@ -4,10 +4,17 @@
   <li class="breadcrumb-item active">{{practiceArea?.name}}</li>
 </ol>
 <h2><i class={{practiceArea?.faIcon}} aria-hidden="true"></i> {{practiceArea?.name}}</h2>
-  <div class="alert alert-info col-10" role="alert">
+<div class="alert alert-info col-10" role="alert">
   {{practiceArea?.description}}
-  </div>
+</div>
 
-<hr>
-  <h5>In this location will be a sumarry of each layer in this area after the <strong> Team Summay, Search and Details</strong> are Completed</h5>
-<hr>
+<div class="row">
+  <div *ngFor="let item of $lawyers | async" class="col-lg-3 hovereffect">
+    <a routerLink="/team/{{item.id}}" class="btn btn-default" click role="button">
+      <img class="img-fluid rounded-circle" src={{item.img}} alt="{{item.name}} {{item.lastName}}">
+      <div class="card-block overlay">
+        <h5>{{item.lastName}}, {{item.name}}</h5>
+      </div>
+    </a>
+  </div>
+</div>
