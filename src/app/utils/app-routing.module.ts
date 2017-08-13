@@ -1,3 +1,4 @@
+import { LawyerDetailComponent } from '../team/lawyer-detail/lawyer-detail.component';
 import { BlogPostComponent } from '../blog/blog-post/blog-post.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'blog',  component: BlogComponent },
   { path: 'blog/:id',  component: BlogPostComponent },
   { path: 'team',  component: TeamComponent },
+  { path: 'team/:id',  component: LawyerDetailComponent },
   { path: 'practice',  component: PracticingAreaComponent },
   { path: 'practice/:id',  component: PracticingAreaDetailComponent },
   { path: 'contact',  component: ContactComponent },

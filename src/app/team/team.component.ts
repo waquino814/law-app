@@ -78,8 +78,4 @@ export class TeamComponent implements OnInit {
     }
   }
 
-  showLawyerDetails(id: string) {
-    console.log('show + ' + id);
-  }
-
 }

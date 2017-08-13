@@ -6,4 +6,8 @@ export class Lawyer {
      img: string;
      biography: string;
      practiceAreas: string[];
+
+     public getFullName(): string {
+         return this.name + ' ' + this.lastName;
+     }
 }

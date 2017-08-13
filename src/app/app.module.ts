@@ -20,6 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PracticingAreaDetailComponent } from './practicing-area/practicing-area-detail/practicing-area-detail.component';
 import { PraciceAreasIdToNamePipe } from './utils/pracice-areas-id-to-name-pipe';
 import { BlogPostComponent } from './blog/blog-post/blog-post.component';
+import { LawyerDetailComponent } from './team/lawyer-detail/lawyer-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BlogPostComponent } from './blog/blog-post/blog-post.component';
     NotFoundComponent,
     PracticingAreaDetailComponent,
     PraciceAreasIdToNamePipe,
-    BlogPostComponent
+    BlogPostComponent,
+    LawyerDetailComponent
   ],
   imports: [
     BrowserModule,

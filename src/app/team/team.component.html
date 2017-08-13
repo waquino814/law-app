@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-2 top-10">
-    <div class="card card-outline-info" style="top: 17%; left: 22%; position: fixed; width:160px; ">
+    <div class="card card-outline-info" style="top: 5%; left: 5%; position: relative; width:160px; ">
       <div class="card-header">
         <h5> Search</h5>
       </div>
@@ -39,10 +39,12 @@
     <hr>
     <div class="row">
       <div *ngFor="let item of lawyers" class="card col-3 top-10 hovereffect" style="margin-left: 10px;" (click)="showLawyerDetails(item.id)">
+       <a routerLink="/team/{{item.id}}" class="btn btn-default" click role="button">
         <img class="img-fluid" src={{item.img}} alt="Card image cap">
         <div class="card-block overlay">
           <h5>{{item.lastName}}, {{item.name}}</h5>
         </div>
+        </a>
       </div>
     </div>
   </div>
@@ -67,8 +69,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of mf.data;" (click)="showLawyerDetails(item.id)">  
-          <td>{{item.lastName}}, {{item.name}}</td>
+        <tr *ngFor="let item of mf.data;">  
+          <td><a routerLink="/team/{{item.id}}" class="btn btn-default" click role="button">{{item.lastName}}, {{item.name}}</a> </td>
           <td>{{ getPracticeAreasName(item.practiceAreas)}}</td>
         </tr>
       </tbody>
